@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falak Daga | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F1E7E7;
+      --primary: #2B2D42;
+      --secondary: #8E7AB5;
+      --accent: #FF6B6B;
+      --highlight: #E5989B;
+      --text-light: #ffffff;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Urbanist', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--primary);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: slideDown 1s ease forwards;
+    }
+
+    nav a {
+      color: var(--text-light);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #fcefee, #ffeaea);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero img {
+      width: 180px;
+      height: auto;
+      border: 6px solid var(--secondary);
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .hero button {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.4s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero button:hover {
+      background: var(--accent);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 5rem auto 2rem;
+      padding: 0 1.5rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 span {
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.7rem;
+      border-radius: 12px;
+      margin-bottom: 1.7rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      list-style: square;
+      margin-left: 1.8rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .contact-gif {
+      flex: 1 1 45%;
+    }
+
+    .contact-gif img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    form {
+      flex: 1 1 45%;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid var(--secondary);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 1.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #ff4d4d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--primary);
+      background: #faeeee;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-100%);}
+      to {transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Falak Daga</strong></div>
+    <div>
+      <a href="#profile">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero" id="home">
+    <img src="image.jpeg" alt="Falak Daga">
+    <h1>Falak Daga</h1>
+    <button onclick="document.getElementById('main').scrollIntoView({behavior: 'smooth'})">Explore Resume</button>
+  </div>
+
+  <main id="main">
+    <section id="profile">
+      <h2><span>Profile</span></h2>
+      <div class="card">
+        <p>Dynamic professional with a diverse background as a Stock Trader, Insurance Agent, and Home Tutor. Excelled in relationship building and problem-solving. Demonstrated self-discipline and skilled in communication and teamwork.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2><span>Skills & Languages</span></h2>
+      <div class="card">
+        <ul>
+          <li>Excellent Communication</li>
+          <li>Self-Discipline</li>
+          <li>Goal-Oriented Approach</li>
+          <li>Problem Solving Mindset</li>
+          <li>Active Learning</li>
+          <li>Teamwork and Collaboration</li>
+          <li>Languages: Hindi (Proficient C2), English (Advanced C1)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2><span>Experience</span></h2>
+      <div class="card">
+        <h3>Stock Trader</h3>
+        <p>Self-employed, Pali | Currently working</p>
+      </div>
+      <div class="card">
+        <h3>Insurance Agent</h3>
+        <p>HDFC ERGO, Pali, India | Currently working</p>
+      </div>
+      <div class="card">
+        <h3>Home Tutor</h3>
+        <p>Pali, India | Aug 2021 – Sept 2022</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2><span>Education</span></h2>
+      <div class="card">
+        <p><strong>BBA</strong> – IIM Bangalore | Expected Aug 2027</p>
+        <p><strong>High School Diploma</strong> – Central Academy School, Pali | April 2023</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>Accomplishments & Certificates</span></h2>
+      <div class="card">
+        <ul>
+          <li>Cultural Head of School</li>
+          <li>Helped students achieve 90+ marks</li>
+          <li>Academic Excellence Award (Twice)</li>
+          <li>Scored 94% in High School Diploma</li>
+          <li>Best Guitarist Award</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><span>Contact Me</span></h2>
+      <div class="contact-container">
+        <div class="contact-gif">
+          <img src="https://digitalgopi.com/wp-content/uploads/2021/01/lets-connect.png" alt="Contact Animation">
+        </div>
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Mobile Number" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Falak Daga | dagafalak@gmail.com</p>
+  </footer>
+</body>
+</html>
